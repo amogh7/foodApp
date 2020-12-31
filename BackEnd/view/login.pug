@@ -1,0 +1,14 @@
+extends base.pug
+block content
+ .boxlogin
+      h1 Login Page 
+      p.email-login Email Id
+      input.input1#email(type='text' placeholder='Email Id')
+      p.email-login Passoword
+      input.input1#pass(type='password' placeholder='Passoword')
+      button.signin
+        a(href='http://') login
+      a.forgot(href='http://') Forgot password
+
+append scripts
+ script(src="./js/login.js")

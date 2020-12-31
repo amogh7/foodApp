@@ -1,0 +1,189 @@
+extends base.pug
+block header
+ section#head
+  nav.navbar
+    .features
+      a.nav(href=' ') FEATURES 
+    .details
+      a.nav(href=' ') DETAILS 
+    .Reviews
+      a.nav(href=' ') REVIEWS
+    .Plans
+      a.nav(href=' ') PLANS
+    .signup-nav
+      a.nav(href=' ') SIGN UP
+  .message
+    h1.meal-message MEAL PLANS
+    h1.meal-message
+      | FOR 
+      span.last-part EVERYONE
+    button.book Book Now 
+    button.show-more Show me more 
+block content
+ section#features
+  .topdiv
+    | AWESOME FEATURES
+  .cards
+    .days
+      i.far.fa-calendar-check.icon
+      h2.feature-heading 365 DAYS/YEAR
+      p
+        | Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can
+        | also choose to order more flexibly if that's your style.
+    .organic
+      i.fas.fa-seedling.icon
+      h2.feature-heading 100% ORGANIC
+      p
+        | All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics.
+        | Good for your health, the environment, and it also tastes better!
+    .delivery
+      i.fas.fa-truck.icon
+      h2.feature-heading 30 MINUTES OR FREE
+      p
+        | You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We
+        | work with the best chefs in each town to ensure that you're 100% happy.
+ section#steps
+  .heading-div STEPS TO FOLLOW
+  .content-div
+    img.step-img(src='images/Capture.Png' alt='step-image')
+    .three-step
+      .first
+        .first-step
+          | 1
+        p.step-text Choose the subscription plan that best fits your needs and sign up today.
+      .second
+        .second-step
+          | 2
+        p.step-text
+          | Order your delicious meal using our mobile app or website. Or you can even call us !
+      .third
+        .third-step
+          | 3
+        p.step-text Enjoy your meal after less than 20 minutes. See you the next time!
+ section#review-section
+  .topdiv-review
+    | REVIEWS
+  .cards-review
+    .review-card
+      h2.review-head DAVID SMITH
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
+        | ipsam, magnam eius repellat perferendis porro, iste voluptas!.
+      p.star ⭐⭐⭐⭐⭐
+    .review-card
+      h2.review-head DAVID SMITH
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
+        | ipsam, magnam eius repellat perferendis porro, iste voluptas!.
+      p.star ⭐⭐⭐⭐⭐
+    .review-card
+      h2.review-head DAVID SMITH
+      p
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
+        | ipsam, magnam eius repellat perferendis porro, iste voluptas!.
+      p.star ⭐⭐⭐⭐⭐
+ section#signup
+  h2.topdiv-signup START EATING HEALTHY TODAY
+  .signup-parent
+    .signup-child
+      .signup-header
+        h3 PREMIUM
+        .signup-pricing
+          span.pricing $399
+          | /month
+          p That’s only 13.30$ per meal
+      .signup-features
+        .li
+          p
+            i.fas.fa-check.small-icon  
+            | 1 meal every day
+          p
+            i.fas.fa-check.small-icon  
+            | Order 24/7
+          p
+            i.fas.fa-check.small-icon  
+            | Access to newest creations
+          p
+            i.fas.fa-check.small-icon  
+            | Free delivery
+        .signup-button
+          a.btn.btn-full(href='#') I'm hungry
+    .signup-child.active
+      .signup-header
+        h3 PREMIUM
+        .signup-pricing
+          span.pricing $399
+          | /month
+          p That’s only 13.30$ per meal
+      .signup-features
+        .li
+          p
+            i.fas.fa-check.small-icon  
+            | 1 meal every day
+          p
+            i.fas.fa-check.small-icon  
+            | Order 24/7
+          p
+            i.fas.fa-check.small-icon  
+            | Access to newest creations
+          p
+            i.fas.fa-check.small-icon  
+            | Free delivery
+        .signup-button
+          a.btn.btn-full(href='#') I'm hungry
+    .signup-child
+      .signup-header
+        h3 PREMIUM
+        .signup-pricing
+          span.pricing $399
+          | /month
+          p That’s only 13.30$ per meal
+      .signup-features
+        .li
+          p
+            i.fas.fa-check.small-icon  
+            | 1 meal every day
+          p
+            i.fas.fa-check.small-icon  
+            | Order 24/7
+          p
+            i.fas.fa-check.small-icon  
+            | Access to newest creations
+          p
+            i.fas.fa-check.small-icon  
+            | Free delivery
+        .signup-button
+          a.btn.btn-full(href='#') I'm hungry
+ section#contact-us
+  .topdiv-contact
+    | CONTACT US
+  .contact
+    .contact-video
+      video.bg-video__content(autoplay='' muted='' loop='')
+        source(src='images/Avocado.mp4' type='video/mp4')
+        |           Your browser is not supported
+    .contact-form
+      .name
+        p Name
+        input.text(type='text' placeholder='Your Name')
+      .email
+        p Email
+        input.text(type='text' placeholder='Your Email')
+      .how
+        p How did you find us
+        select.text(name='' id='')
+          option(value='')
+            | friends
+          option(value='') search
+          option(value='') advertsiment
+          option(value='') other
+      .drop
+        p Drop us a line
+        textarea.text.area(name='' id='' placeholder='Your Message')
+      .agree
+        p
+          input.checkbox(type='checkbox' name='email')
+          |  I have read and agree with all the Privacy Policy
+          |             and Terms Conditions
+      .send-mes
+        button.book.send  SEND MESSAGE
