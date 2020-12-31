@@ -1,0 +1,22 @@
+.signup-child
+  .signup-header
+    h3 #{plan.name}
+    .signup-pricing
+      span.pricing #{plan.price} Rs
+      p That’s only #{Math.ceil(plan.price/plan.duration)} Rs per meal
+  .signup-features
+    .li
+      p
+        i.fas.fa-check.small-icon  
+        | 1 meal every day
+      p
+        i.fas.fa-check.small-icon  
+        | Order 24/7
+      p
+        i.fas.fa-check.small-icon  
+        | Rating #{plan.rating} out of 5
+      p
+        i.fas.fa-check.small-icon  
+        | Free delivery
+    .signup-button
+      a.btn.btn-full(href='#') I'm hungry

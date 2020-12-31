@@ -1,17 +1,18 @@
 *{
-box-sizing: border-box;
-
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
     color:white;
     padding: 0;
     margin :0;
     background-image: #556052;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(128, 96, 101);
     background-size: cover;
     background-position: center;
-    font-size: 1.3rem;
+    
     
     
 }
@@ -19,11 +20,9 @@ body{
     width: 100%;
     max-width: 440px;
     text-align: center;
-    margin:10px auto 5px;
-    padding: 5px ; 
-    background: rgba(0,0,0,0.5);
-    height:530px ;
-    
+    margin:30px auto 5px;
+    padding: 23px ; 
+    background: rgba(0,0,0,0.5); 
 }
 
 .input1{
@@ -38,17 +37,18 @@ body{
 }
  
 h1{
-    margin-bottom: 40px;
-    margin-top:30px;
+    margin-bottom: 45px;
 }
 .signin{
     width:90%;
-    margin :50px auto 40px;
+    margin :61px auto 35px;
     display:block;
     border:none;
     padding: 10px 54px;
     background-color: crimson;
     border-radius: 5px;
+    cursor: pointer;
+    outline: none;
        
 }
 .signin:hover{
@@ -59,19 +59,87 @@ a{  color:white;
     font-size: medium;
 }
 .forgot{
-    margin-bottom:50px;
-    margin-top:10px;
+   
+    
+    margin-left:50px;
 }
 .forgot:hover{
  color:   rgb(119, 104, 155);
 }
-img{margin:0;
-
-    width: 400px;
-    height: 100px;
+.SignIn:hover{
+    color:   rgb(119, 104, 155);
 }
+.SignIn{
+    margin: 30px;
+}
+
 
 .email-login{
     text-align:center !important;
-    margin: 25px;
+    margin: 20px;
 }
+.navbar{
+    
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    padding: 20px;
+}
+.nav{
+   font-size: 1rem;
+   margin:20px 10px 10px;
+   color:white;
+   text-decoration: none;
+   height: 25px;
+   
+
+}
+.nav:hover{
+    
+    
+    border-bottom: 1px solid #5f27cd;
+    padding: 5px;
+
+}
+.footer-text{
+    display :flex;
+  
+   
+}
+.footer-parent{
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+ font-size: 1.7rem;
+ 
+}
+ul {
+  list-style-type: none;
+}
+.social-link{
+  display:flex;
+}
+.text-value{
+  margin: 0px 15px;
+}
+a{
+  text-decoration: none;
+  
+}
+footer{
+  background-color: #3A3838;
+}
+.footer-p{
+  text-align:center;
+  font-size: 1.5rem;
+  padding-bottom: 50px;
+}
+.icon-footer{
+margin: 0 20px;
+color:white;
+}
+.text-value a{
+  color:white;
+}
+

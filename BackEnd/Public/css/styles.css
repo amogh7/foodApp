@@ -20,13 +20,14 @@
     
     display: flex;
     justify-content: flex-end;
-    color: white;
+    color: Black;
     padding: 10px;
+
 }
 .nav{
    font-size: 1rem;
    margin:20px 10px 10px;
-   color:black;
+   color:white;
    text-decoration: none;
    height: 25px;
    
@@ -95,6 +96,7 @@ color:white;
 #features{
 text-align: center;
 margin: 60px;
+background-color: white;
 }
 .topdiv{
 color: lightgray;
@@ -459,8 +461,9 @@ p{
     
     display: flex;
     justify-content: space-between;
-    padding: 25px;
+    padding: 55px;
    font-size: 1.7rem;
+   
    
   }
   ul {

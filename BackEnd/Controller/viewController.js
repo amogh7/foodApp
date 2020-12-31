@@ -1,3 +1,6 @@
+const planModel = require("../Model/plansModel");
+
+
 function getDemoPage(req,res){
        // send demo page to client
     // res.render("demo.pug" , {title:"Demo Page" , content:"I am coming from object"});
@@ -9,8 +12,21 @@ function getHomePage(req,res){
 function getLoginPage(req,res){
     res.render("login.pug");
 }
-
-
+function getSignupPage(req,res){
+    res.render("signup.pug");
+}
+async function getPlansPage(req , res){
+    try{
+        let plans = await planModel.find(); 
+        console.log(plans);
+        res.render("plans.pug" ,{plans:plans})
+    }
+    catch(error){
+        console.log(error);
+    }
+}
 module.exports.getDemoPage=getDemoPage;
 module.exports.getHomePage=getHomePage;
 module.exports.getLoginPage=getLoginPage;
+module.exports.getSignupPage=getSignupPage;
+module.exports.getPlansPage=getPlansPage;

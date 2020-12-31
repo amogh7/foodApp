@@ -20,7 +20,7 @@ try{
 
 }
 catch(error){
-    res.status(501).json({
+    res.status(201).json({
         message:"Failed to send",
         error:error,
     });
