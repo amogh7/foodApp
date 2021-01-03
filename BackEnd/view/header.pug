@@ -1,11 +1,20 @@
 nav.navbar
   .features
-    a.nav(href=' ') FEATURES 
+    a.nav(href='/') FEATURES 
   .details
     a.nav(href=' ') DETAILS 
   .Reviews
     a.nav(href=' ') REVIEWS
   .Plans
-    a.nav(href='http://localhost:3000/plans' ) PLANS
-  .signup-nav
-    a.nav(href='http://localhost:3000/login') LOGIN
+    a.nav(href='/plans' ) PLANS
+  if name
+      .Plans
+        a.nav(href='/profile' ) #{name}
+      .logout
+        a.nav(href='/logout' ) LOGOUT
+  else     
+      .signup-nav
+        a.nav(href='/login') LOGIN
+   
+    
+  

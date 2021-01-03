@@ -10,8 +10,14 @@ block header
       a.nav(href=' ') REVIEWS
     .Plans
       a.nav(href='http://localhost:3000/plans') PLANS
-    .signup-nav
-      a.nav(href='http://localhost:3000/login') LOGIN
+    if name
+      .Plans
+        a.nav(href='/profile' ) #{name}
+      .logout
+        a.nav(href='/logout' ) LOGOUT
+    else     
+      .signup-nav
+        a.nav(href='/login') LOGIN
   .message
     h1.meal-message MEAL PLANS
     h1.meal-message
@@ -85,75 +91,8 @@ block content
  section#signup
   h2.topdiv-signup START EATING HEALTHY TODAY
   .signup-parent
-    .signup-child
-      .signup-header
-        h3 PREMIUM
-        .signup-pricing
-          span.pricing $399
-          | /month
-          p That’s only 13.30$ per meal
-      .signup-features
-        .li
-          p
-            i.fas.fa-check.small-icon  
-            | 1 meal every day
-          p
-            i.fas.fa-check.small-icon  
-            | Order 24/7
-          p
-            i.fas.fa-check.small-icon  
-            | Access to newest creations
-          p
-            i.fas.fa-check.small-icon  
-            | Free delivery
-        .signup-button
-          a.btn.btn-full(href='#') I'm hungry
-    .signup-child.active
-      .signup-header
-        h3 PREMIUM
-        .signup-pricing
-          span.pricing $399
-          | /month
-          p That’s only 13.30$ per meal
-      .signup-features
-        .li
-          p
-            i.fas.fa-check.small-icon  
-            | 1 meal every day
-          p
-            i.fas.fa-check.small-icon  
-            | Order 24/7
-          p
-            i.fas.fa-check.small-icon  
-            | Access to newest creations
-          p
-            i.fas.fa-check.small-icon  
-            | Free delivery
-        .signup-button
-          a.btn.btn-full(href='#') I'm hungry
-    .signup-child
-      .signup-header
-        h3 PREMIUM
-        .signup-pricing
-          span.pricing $399
-          | /month
-          p That’s only 13.30$ per meal
-      .signup-features
-        .li
-          p
-            i.fas.fa-check.small-icon  
-            | 1 meal every day
-          p
-            i.fas.fa-check.small-icon  
-            | Order 24/7
-          p
-            i.fas.fa-check.small-icon  
-            | Access to newest creations
-          p
-            i.fas.fa-check.small-icon  
-            | Free delivery
-        .signup-button
-          a.btn.btn-full(href='#') I'm hungry
+   each plan in plans
+     include planCard.pug         
  section#contact-us
   .topdiv-contact
     | CONTACT US

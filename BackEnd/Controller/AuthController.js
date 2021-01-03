@@ -1,6 +1,33 @@
 let userModel=require("../Model/usersModel");
 const jwt=require("jsonwebtoken");
-const { SECRET_KEY } = require("../config/secrets");
+const { SECRET_KEY , GMAIL_ID , GMAIL_PW } = require("../config/secrets");
+const cookieParser=require("cookie-parser");
+const nodemailer = require("nodemailer");
+
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
+async function sendEmail(message) {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      host: "smtp.gmail.com",
+      auth: {
+        user: GMAIL_ID ,
+        pass: GMAIL_PW,
+      },
+    });
+
+    let res = await transporter.sendMail({
+      from: message.from, // sender address
+      to: message.to, // list of receivers
+      subject: message.subject, // Subject line
+      text: message.text, // plain text body
+    });
+    return res;
+  } catch (error) {
+    return error;
+  }
+}
 async function signup(req,res){
 try{
        let user=req.body;
@@ -27,6 +54,40 @@ catch(error){
 }
 }
 
+
+async function logout(req,res){
+    try{
+           res.clearCookie('jwt');
+           res.redirect('/');
+    }
+    catch(error){
+        res.status(501).json({
+            error
+        });
+             
+    }
+}
+async function isLoggedIn(req,res,next){
+    try{
+        let token=req.cookies.jwt;
+        const payload=jwt.verify(token,SECRET_KEY);
+        if(payload){
+           let user= await userModel.findById(payload.id);
+           req.name=user.name;
+           req.user=user;
+           next();
+        }
+        else{
+            next();
+        }
+
+    }
+    catch(error){
+        next();
+    }
+    
+}
+
 async function login(req,res){
     try{
            let {email,password}=req.body;
@@ -36,10 +97,12 @@ async function login(req,res){
                let user=loggedInUser[0];
                if(user.password==password){
                    const token=jwt.sign({id:user["_id"]},SECRET_KEY);
+                   res.cookie('jwt',token,{httpOnly:true});
+                   
                    res.status(200).json({
                        message:"loged in Successfuly",
                        data:loggedInUser[0],
-                       token,
+                    //    token,
                    });
                }else{
                    res.status(200).json({
@@ -65,7 +128,9 @@ async function login(req,res){
 
 async function protectRoute(req,res,next){
     try{
-        const token=req.headers.authorization.split(" ").pop();
+        // const token=req.headers.authorization.split(" ").pop();
+        // console.log(token);
+        const token =req.cookies.jwt;
         console.log(token);
         console.log("Inside protect route");
         const payload=jwt.verify(token,SECRET_KEY);
@@ -120,10 +185,18 @@ async function isAuthorized(req , res , next){
             console.log(token);
             let updatedUser=await user.save({validateBeforeSave:false});
                 console.log(updatedUser);
-                let resetLink=`http://localhost:3000/api/users/resetpassword/${token}`;
+                let resetLink=`http://localhost:3000/resetpassword/${token}`;
+                let message = {
+                    from:GMAIL_ID,
+                    to:user.email,
+                    subject:"Reset Password",
+                    text:"link to reset your passwor is "+resetLink
+                  }
+                  let response = await sendEmail(message);
+
                 res.status(201).json({
                     message:"sent successfuly",
-                    resetLink:resetLink
+                    response,
                 });
 
                   }
@@ -180,3 +253,5 @@ module.exports.login=login;
 module.exports.protectRoute=protectRoute;
 module.exports.forgetPassword=forgetPassword; 
 module.exports.resetPassword=resetPassword;
+module.exports.isLoggedIn=isLoggedIn;
+module.exports.logout=logout;
