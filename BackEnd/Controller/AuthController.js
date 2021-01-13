@@ -28,6 +28,11 @@ async function sendEmail(message) {
     return error;
   }
 }
+
+
+
+
+
 async function signup(req,res){
 try{
        let user=req.body;
@@ -48,7 +53,7 @@ try{
 }
 catch(error){
     res.status(201).json({
-        message:"Failed to send",
+        message:"Sign up Failed ",
         error:error,
     });
 }
@@ -67,6 +72,7 @@ async function logout(req,res){
              
     }
 }
+
 async function isLoggedIn(req,res,next){
     try{
         let token=req.cookies.jwt;
@@ -207,7 +213,7 @@ async function isAuthorized(req , res , next){
                   }
       }
       catch(error){
-        res.statu(501).json({
+        res.status(501).json({
             message:"Failed to forget",
             error
         });

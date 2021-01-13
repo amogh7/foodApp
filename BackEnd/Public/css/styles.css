@@ -1,370 +1,385 @@
+/* ----------------------------------------------------------- */
+/* Basic */
+/* ----------------------------------------------------------- */
+
 *{
     box-sizing:border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
 }
 
-#head{
-    background-image:linear-gradient(rgba(15, 15, 15, 0.8),rgba(22, 5, 5, 0.5)) ,url("../images/pexels-chan-walrus-958545.jpg");
+html{
+    background-color: #fff;
+    color:#555;
+    font-family: 'Lato','Arial',sans-serif ;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+/* ----------------------------------------------------------- */
+/* REUSABLE */
+/* ----------------------------------------------------------- */
+
+section {
+    padding: 80px 0; 
+}
+
+.row{
+
+    margin: 0 auto;
+}
+/*------ Buttons------- */
+.book{
+    background-color:#8e44ad;
+    outline:none;
+    border:none;
+    height: 45px;
+    font-size: 1rem;
+    color:white;
+    padding:10px 35px;
+    border-radius: 15px;
+    transition: transform 1s;
+    cursor: pointer;
+    margin-top: 25px;
+    
+}
+.book:hover{
+transform:scale(1.2);
+box-shadow: 3px 3px 10px 10px rgba(230, 101, 191, 0.15);
+}
+.show-more:hover{
+transform:scale(1.2);
+background-color:#8e44ad;
+color: white;
+
+}
+
+.show-more{
+background-color:transparent;
+outline:none;
+border:1px solid #8e44ad;
+height: 45px;
+font-size: 1rem;
+color:#8e44ad;
+padding:10px 35px;
+border-radius: 15px;
+margin-left: 40px;
+transition: transform 1s;
+cursor: pointer;
+
+}
+
+/* -----Headings------ */
+
+h1 {
+    margin-top :0px;
+    margin-bottom: 0px;
+    color: #fff;
+    font-size: 240%;
+    font-weight:300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing:4px;
+}
+
+h2{
+    margin-top :0px;
+    margin-bottom: 0px;
+    font-size: 180%;
+    font-weight:300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing:4px;
+    text-align: center;
+    color: lightgray;
+}
+
+h2:after{
+    display: block;
+    height :2px;
+    background-color: #5f27cd;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px; 
+}
+h3{
+    font-weight:300;
+    text-transform: uppercase;
+    font-size:110%;
+    margin-bottom:15px;
+}
+/* --------paragraphs---------- */
+p{
+    color: #afa8a8;
+    text-align: left;
+}
+
+.box p{
+    font-size:90%;
+    line-height: 145%;
+}
+
+
+
+.box{
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(27, 38, 49, 0.1) 0px 10px 22px 10px;
+    margin-top: 50px; 
+    transition: all 0.5s ease 0s;
+    width: 30%;
+    margin-left: 50px;
+}
+.box:hover{
+    transform:scale(1.1);
+}
+
+
+
+/* ----------------------------------------------------------- */
+/* HEADER */
+/* ----------------------------------------------------------- */
+
+header{
+    background-image:linear-gradient(rgba(15, 15, 15, 0.8),rgba(22, 5, 5, 0.5)) ,url("../images/hero2.jpg");
     height:100vh;
-    width:100vw;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
-    
 
 }
-.navbar{
+.fixed{
+    background: rgba(143, 140, 140,0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    color: rgb(43, 151, 155);
+    height: 60px;
+    padding-top: 0px;
     
+    margin-right: 40px;
+    
+}
+
+.navbar{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 10px 25px;
+    margin-top: 30px;
+    
+}
+
+
+.nav-links{
     display: flex;
     justify-content: flex-end;
-    color: Black;
-    padding: 10px;
-
 }
 .nav{
-   font-size: 1rem;
-   margin:20px 10px 10px;
-   color:white;
-   text-decoration: none;
-   height: 25px;
-   
+    
+    margin: 10px 10px 10px;
+    color: white;
+    text-decoration: none;
+    
 
+}
+.pro-name{
+    color: #8e44ad;
+    margin: 0 5px;
+}
+.pro-name:hover{
+    border-bottom: 1px solid white;
+    padding: 5px;
 }
 .nav:hover{
     
     
-    border-bottom: 1px solid #5f27cd;
+    border-bottom: 1px solid #8e44ad;
     padding: 5px;
 
 }
 .message{
 position:Absolute;
-top:30%;
-left:10%;
-height:400px;
-
-
+top:35%;
+left:30%;
 }
 .meal-message{
-font-size: 4rem;
+font-size: 240%;
+font-weight: 300;
 color:white;
-
-}
-.book{
-        background-color:#5f27cd;
-        outline:none;
-        border:none;
-        height: 45px;
-        font-size: 1rem;
-        color:white;
-        padding:10px;
-        border-radius: 15px;
-        transition: transform 1s;
-        cursor: pointer;
-        margin-top: 25px;
-        
-}
-.book:hover{
-    transform:scale(1.2);
-    box-shadow: 3px 3px 10px 10px rgba(230, 101, 191, 0.15);}
-.show-more:hover{
-    transform:scale(1.2);
-    background-color:#5f27cd;
-    color: white;
-   
-}
-
-.show-more{
-    background-color:transparent;
-    outline:none;
-    border:1px solid #5f27cd;
-    height: 40px;
-    font-size: 1rem;
-    color:#5f27cd;
-    padding:10px;
-    border-radius: 15px;
-    margin-left: 40px;
-    transition: transform 1s;
-        cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 1px;
+word-spacing:4px;
 }
 .last-part{
     color:#1dd1a1;
 }
-#features{
-text-align: center;
-margin: 60px;
-background-color: white;
-}
-.topdiv{
-color: lightgray;
-font-size: 2rem;
-width: 450px;
-margin:50px auto;
-border-bottom:3px solid #5f27cd ;
-padding: 30px;
-}
-
-.cards{
-display: flex;
 
 
-
-}
-.days {
-    padding: 35px;
-    width: 481px;
-    background-color: white;
-    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1) ;
-    margin: 40px;
-    transition: 0.5s;
-}
-.days:hover{
-    transform:scale(1.1);
-}
-.delivery{
-    
-    padding: 35px;
-    width: 481px;
-    background-color: white;
-    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1) ;
-    margin: 40px;
-    transition: 0.5s;
-}
-.delivery:hover{
-    transform:scale(1.1);
-}
-.organic{
-    padding: 35px;
-    width: 481px;
-    background-color: white;
-    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1) ;
-    margin: 40px;
-    transition: 0.5s;
-    
-}
-.organic:hover{
-    transform:scale(1.1);
-}
+/* ------------iCONS------------- */
 .icon{
-    font-size: 3.5rem;
+    font-size: 220%;
     margin-bottom: 15px;
-    color:#5f27cd;
-  
-
+    color:#8e44ad;
 }
 
-.feature-heading{
-    color: #948280;
-    margin-bottom: 20px;
+/* ----------------------------------------------------------- */
+/* FEATURES*/
+/* ----------------------------------------------------------- */
+.cards {
+        margin: 40px auto;
+        text-align: center;
+        padding-left: 40px;
+}
 
-}
-p{
-    color: #afa8a8;
-    text-align: left;
-}
-.fa-seedling{
-    color:#1dd1a1;
-}
-.fa-calendar-check{
-    color: rgb(231, 69, 96);
-}
-#steps{
-    padding: 50px;
-    background: #F4F4F4;
+/* .cards{
+display: flex;
+text-align: center;
+} */
+
+/* ----------------------------------------------------------- */
+/* Steps */
+/* ----------------------------------------------------------- */
+
+
+
+
+.img-div{
+    text-align: right;
+    padding-right:3%;
+    margin-top: 30px;
     
-
-}
-
-.heading-div{
-    text-align: center;
-    color: #D3D3D3;
-    font-size: 3rem;
-    padding: 25px;
-    width: 598px;
-    text-align: center;
-    color: rgb(211, 211, 211);
-    font-size: 3rem;
-    margin: 8px auto;
-    border-bottom: 2.5px solid rgb(95, 39, 205);
-    padding: 25px;
-    width: 598px;
-}
-.content-div{
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 150px;
-    margin-top:50px ;
-
 }
 .step-img{
-    width:17%;
-   
+    width:30%;  
 }
-.three-step{
-    margin-left: 116px;
-    padding-top: 50px;
-}
-.first-step{
-    float: left;
-    border: 3px solid #5424b4;
-    border-radius: 98px;
-    padding: 3px;
-    height: 4.3rem;
-    width: 4.3rem;
-    font-size: 3rem;
-    text-align: center;
-    margin: 14px;
-    color: #5F27CD;
-}
-.second-step{
-    float: left;
-    border: 3px solid #5F27CD;
-    border-radius: 98px;
-    padding: 3px;
-    height: 4.3rem;
-    width: 4.3rem;
-    font-size: 3rem;
-    text-align: center;
-    margin: 14px;
-    color: #5F27CD;
-}
-.third-step{
-    float: left;
-    border: 3px solid #5F27CD;
-    border-radius: 98px;
-    padding: 3px;
-    height: 4.3rem;
-    width: 4.3rem;
-    font-size: 3rem;
-    text-align: center;
-    margin: 14px;
-    color: #5F27CD;
+.three-step{ 
+    padding-left: 3%;
+    margin-top:70px;
+    margin-bottom: 50px;
 }
 
-.step-text{
-    font-size: 1.2rem;
-    padding: 30px;
-    margin-left: 100px;
-}
 .first{
-    margin-bottom: 30px
+    margin-bottom: 50px;
 }
-.second{
-    margin-bottom: 30px
+
+.first-step{
+  
+    border: 2px solid #8e44ad;
+    border-radius: 50%;
+    padding:5px;
+    height: 55px;
+    width: 55px;
+    font-size: 150%;
+    text-align: center;
+    float:left;
+    color: #8e44ad;
+    display: inline-block;
+    margin-right:25px;
+    
 }
-.third{
-    margin-bottom: 30px
-}
+
+
+
+
+
+
+/* ----------------------------------------------------------- */
+/* Review*/
+/* ----------------------------------------------------------- */
+
+
 #review-section{
     background-image:linear-gradient(rgba(15, 15, 15, 0.8),rgba(22, 5, 5, 0.5)) ,url("../images/pexels-chan-walrus-958545.jpg");
-    height:100vh;
-    width:100vw;
+   
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size:cover;
-    padding: 80px;
     background-position:center;
+   
 }
-.topdiv-review{
-    color: lightgray;
-    font-size: 2rem;
-    width: 209px;
-    margin: 2px auto;
-    border-bottom: 3px solid #5f27cd;
-    padding: 15px;
-    text-align: center;
-}
-.cards-review{
-    display: flex;  
-}
-.review-card{
-    padding: 35px;
-    width: 433px;
-    background-color: #F0FFFF;
-    box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.1);
-    margin: 50px 30px;
-    transition: 0.5s;
-    
-}
+
 .review-head{
-    color: #948280;
     text-align: center;
-    margin-bottom: 20px;
-    margin: 30px
+    color: darkgray;
 }
+
+.card{
+    background-color: #F0FFFF;
+    color: grey;
+    margin-top: 50px;
+    padding: 15px;
+    width: 30%;
+    margin-left: 50px;
+}
+
+
 .star{
-    margin:20px ;
+    
     color:purple;
     text-align: center;
+    margin-top: 15px;
 }
-.signup {
-    background-color: #f4f4f4;
-  }
-.fixed{
-    background: rgb(143, 140, 140);
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    color: rgb(43, 151, 155);
-    height: 50px;
+/* ----------------------------------------------------------- */
+/* Sign up*/
+/* ----------------------------------------------------------- */
+.arrange{
+    margin-top:26px;
+   
 }
-  .signup-parent {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+
+
+
+
+.signup-parent {
+    margin-top: 50px;
+}
+  
   
   .signup-child {
     border-width: 1px;
     border-color: rgb(134, 143, 161);
     border-style: solid;
     border-radius: 4%;
-    width: 29%;
     /* margin-bottom: 4%; */
     font-size: 120%;
+    text-align: center;
+
+    
+
   }
   .signup-features .li {
     text-align: left;
     /* font-size: 123%; */
     line-height: 200%;
     border-bottom: 1px solid rgb(134, 143, 161);
-    margin: 1.7rem;
-    padding-bottom: 13px
+    padding: 3%;
+
+    
   }
   
   .signup-header {
     padding: 3%;
     border-bottom: 1px solid rgb(134, 143, 161);
-    line-height: 265%;
-    margin: 1rem;
+    line-height: 150%;
     color: #B6C4B5;
   }
-  .signup-button {
-    text-align: center;
-    position: relative;
-    /* top: 0.rem; */
-    top: 0.9rem;
-    /* left: 5rem; */
-    transition: transform 1s;
-   
-  }
-  .signup-button:hover{
-      transform: scale(1.2);
+  
+  .signup-button{
+      margin-top:30px;
+      height: 45px;
   }
 
   .pricing {
     font-size: 300%;
     color: #f63854;
   }
-  /* .features { */
-  /* scale: transform(2); */
-  /* } */
-  
+ 
   .signup-features{
     padding-left: 7px;
+    margin-bottom:15px;
   }
   .signup-child {
    
@@ -378,55 +393,28 @@ p{
     padding: 50px;
     background: #F4F4F4; 
   }
-  .topdiv-signup{
-    color: lightgray;
-    font-size: 2rem;
-    margin: 50px auto;
-    border-bottom: 3px solid #5f27cd;
-    padding: 15px;
-    text-align: center;
-    width: 562px;
-  }
-  .btn{
-    background-color: #5f27cd;
-    outline: none;
-    border: none;
-    height: 17px;
-    color: white;
-    padding: 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none;
-}
-    
+
  
-  
   .small-icon{
     margin-right: 15px;
     color:#f63854;
 
   }
+
+
+  /* ----------------------------------------------------------- */
+/* Contact us */
+/* ----------------------------------------------------------- */
+
+
   #contact-us{
-    padding: 50px;
     background-color: #212529;
-  }
-  .topdiv-contact{
-    color: lightgray;
-    font-size: 2rem;
-    width: 267px;
-    margin: 2px auto;
-    border-bottom: 3px solid #5f27cd;
-    padding: 15px;
-    text-align: center;
   }
   .bg-video__content{
     height: 351px;
-    margin-top: 68px
-  }
-  .contact{
-      display :flex;
-      justify-content: space-evenly;
-      margin:50px ;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-left: 100px;
   }
   .text{
     border-radius: 3px;
@@ -443,7 +431,7 @@ p{
   }
   .send-mes{
     margin: 40px;
-    text-align: center;
+    text-align: left;
   }
   .agree{
     margin: 36px 0;
@@ -452,6 +440,17 @@ p{
     padding: 10px;
     height: 51px;
   }
+  .contact-form{
+      margin-top: 50px;
+  }
+
+  /* ----------------------------------------------------------- */
+/* Footer*/
+/* ----------------------------------------------------------- */
+
+footer{
+    background-color:#3A3838 ;
+}
   .footer-text{
       display :flex;
     
@@ -463,7 +462,7 @@ p{
     justify-content: space-between;
     padding: 55px;
    font-size: 1.7rem;
-   
+  
    
   }
   ul {
@@ -478,9 +477,6 @@ p{
 a{
     text-decoration: none;
     
-}
-footer{
-    background-color: #3A3838;
 }
 .footer-p{
     text-align:center;

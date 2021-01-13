@@ -4,8 +4,9 @@ let idx=0;
 let word=names[idx];
 let isDeleting=false;
 let text="";
-let navlinks = document.querySelector(".navbar");
-let showcase = document.querySelector("#head");
+let navlinks = document.querySelector(".nav-links");
+let navlink = document.querySelector(".navbar");
+let showcase = document.querySelector("header");
 
 window.addEventListener("load",function(){
     typewords();
@@ -15,10 +16,16 @@ window.addEventListener("load",function(){
         let {bottom} = showcase.getBoundingClientRect();
         if(bottom <= 0 ){
             navlinks.classList.add("fixed");
+            navlink.classList.add("arrange");
         }else{
             if(navlinks.classList.contains("fixed")){
                 navlinks.classList.remove("fixed");
             }
+            
+            if(navlink.classList.contains("arrange")){
+                navlink.classList.remove("arrange");
+            }
+
         }
     });
 });

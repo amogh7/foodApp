@@ -1,0 +1,380 @@
+@media only screen and (max-width: 1200px){
+   
+   
+    body{
+        font-size: 19px;
+    }
+    .message{
+        width:60%;
+        padding:0 2%;
+
+    }
+    .row{
+        padding:2%;
+       
+    }
+    .top-div{
+        margin-left: 50px;
+    }
+    .img-div {
+        text-align: center;
+        width: 40%;
+    }
+    .three-step {
+      padding-left: 0;
+     
+      width: 40%;
+    }
+    .icon{
+        font-size:200%;
+    }
+    .signup-child{
+        width: 285px;
+        width: 285px;
+      font-size: 19px;
+      margin-left: 25px;
+    }
+    .box,.card{
+        margin-left:20px ;
+        width: 280px;
+        
+    }
+
+    .card{
+        
+        padding: 10px;
+        width: 28%;
+    }
+    .cards{
+        margin-top: 0;
+        padding-left: 80px;
+    }
+    .topdiv{
+        padding-right: 10%;
+    }
+    .topdiv-review{
+        padding-right: 10%;
+    }
+    .signup-parent{
+    padding-left: 95px;
+    }
+    .contact{
+      width: 90%;
+      margin: 10px;
+    }
+
+    .bg-video__content{
+        width: 80%;
+        margin-right: 40px;
+        margin-left: 0;
+        
+    }
+    .contact-form .text,.contact-form p {
+        width: 90%;
+    }
+    .contact-form{
+        width: 50%;
+        margin-left: 50px;
+    }
+    .contact-video{
+        width: 40%; 
+    }
+
+    footer a{
+        font-size: 19px;
+    }
+    .footer-p{
+        font-size: 24px;
+        padding-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 1023px){
+    body{
+        font-size:16px;
+    }
+    section{
+        padding:60px 0;
+    }
+    .row{
+        padding: 0 15%;
+        
+    }
+   
+
+    .icon{
+        font-size: 200%;
+    }
+
+    .signup-child{
+        width: 265px;
+       font-size: 18px;
+       margin-left: 10px;
+    }
+    .signup-parent{
+        margin-top: 35px;
+          padding-left: 20px;
+    }
+    
+    .topdiv{
+        padding-right: 30%;
+    }
+    .topdiv-review{
+        padding-right: 28%;
+    }
+    .topdiv-signup {
+        padding-right: 50%;
+    }
+
+    .contact{
+        margin: 10px;
+      }
+      .bg-video__content {
+        height: 274px;
+        margin-top: 60px;}
+      .contact-form .text{
+          width: 100%;
+      }
+    
+      .area {
+        height: 110px;
+    }
+    .card{
+        width: 220px;
+        margin-left: 15px;
+        height: 280px;
+    }
+
+    .box{
+       
+        width: 220px;
+        margin-left: 20px;
+        height: 280px;
+    
+        }
+        .cards{
+            padding-left: 65px;
+            margin-top: 20px;
+    
+    
+        }
+    
+    }
+
+   
+@media only screen and (max-width: 940px){
+
+    
+
+    body{
+        font-size:15px ;
+    }
+    .box{
+       
+    width: 180px;
+    margin-left: 15px;
+    height: 273px;
+
+    }
+    .icon{
+        font-size: 180%;
+    }
+
+    .cards{
+        padding-left: 40px;
+        margin-top: 20px;
+
+
+    }
+    .step-img {
+        width: 78%;
+    }
+    .first-step {
+        
+        height: 40px;
+        width: 39px;
+        font-size: 127%;
+        margin-right: 16px;
+        margin-top: 12px;
+    }
+    
+  
+    
+    .card{
+        width: 180px;
+        margin-left: 15px;
+        height: 245px;
+    }
+    .signup-child{
+        width: 180px;
+        font-size: 15px;
+        margin-left: -2%;
+        height: 355px;
+
+    }
+    .signup-child span{
+        font-size: 30px;
+    }
+    .signup-parent{
+        margin-top: 25px;
+        margin-right: -5px;
+          
+    }
+    .topdiv-signup {
+        padding-right: 28%;
+    }
+    .area {
+        height: 100px;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 767px){
+    body{
+        font-size: 15px;
+    }
+    section{
+        padding: 30px 0;
+    }
+.col{
+    width: 100%;
+}
+
+.row{
+    padding: 0 4%;
+
+}
+.box{
+    padding-top: 20px;
+    height: auto;
+    width: 90%;
+}
+.box:first-child{
+    margin-left: 15px;
+}
+
+.card{
+    padding-top: 20px;
+    height: auto;
+    width: 90%;
+    font-size: 15px;
+}
+.card:first-child{
+    margin-left: 15px;
+}
+
+.step-text{
+    padding-top: 15px;
+}
+
+.signup-child{
+    font-size: 15px;
+}
+
+footer{
+    padding: 0;
+}
+
+.contact-form{
+    margin-left:0 ;
+    width: 90%;
+    margin-top: 10px;
+}
+
+
+  .bg-video__content {
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.agree{
+    margin: 0px;
+}
+.send-mes {
+    margin: 0px;
+    text-align: center;
+}
+.area {
+    height: 70px;
+}
+.footer-parent{
+    display: inline-block;
+    margin-left : 100px;
+    margin-top: -35px;
+    margin-bottom: -35px;
+}
+
+.footer-p{
+    margin-left :80px;
+    display: inline-block;
+
+}
+.social-link{
+    margin-left: 35px;
+    margin-bottom: 0px;
+}
+
+.message{
+    left: 10px;
+    width: auto;
+}
+
+nav{
+    display: none;
+}
+.cards{
+    margin-top: -35px;
+    
+}
+
+.three-step{
+    margin-top: 0px;  
+}
+
+.first{
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.step-img {
+    width: 27%;
+}
+.first{
+    margin: 24px;
+
+}
+
+
+
+}
+
+@media only screen and (max-width: 501px){
+
+    .footer-parent{
+    display: inline-block;
+    margin-left: auto;
+ 
+}
+
+.footer-p{
+    margin-left :50px;
+    display: inline-block;
+    font-size: 15px;
+
+}
+.social-link{
+    margin-left: 35px;
+    margin-bottom: 0px;
+}
+
+.message{
+    left: 0px;
+}
+
+
+nav{
+    display: none;
+}
+
+
+}

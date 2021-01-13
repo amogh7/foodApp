@@ -1,20 +1,21 @@
-nav.navbar
-  .features
-    a.nav(href='/') FEATURES 
-  .details
-    a.nav(href=' ') DETAILS 
-  .Reviews
-    a.nav(href=' ') REVIEWS
-  .Plans
-    a.nav(href='/plans' ) PLANS
-  if name
-      .Plans
-        a.nav(href='/profile' ) #{name}
-      .logout
-        a.nav(href='/logout' ) LOGOUT
-  else     
-      .signup-nav
-        a.nav(href='/login') LOGIN
+nav.nav-links.row
+  ul.navbar
+    li.features
+      a.nav(href='/') FEATURES 
+    li.details
+      a.nav(href=' ') DETAILS 
+    li.Reviews
+      a.nav(href=' ') REVIEWS
+    li.Plans
+      a.nav(href='/plans') PLANS
+    if name
+       li.name
+         a.pro-name(href='/profile' ) #{name}
+       li.logout
+         a.nav(href='/logout' ) LOGOUT
+    else     
+       li.signup-nav
+         a.nav(href='/login') LOGIN
    
     
   

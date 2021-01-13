@@ -4,57 +4,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="vendors/css/normalize.css">
+  <link rel="stylesheet" href="vendors/css/grid.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/queries.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <title>Food App</title>
 </head>
 
 <body>
-  <section id="head">
-    <nav class="navbar">
-      <div class="features "> <a href=" " class=" nav">FEATURES </a> </div>
-      <div class="details "> <a href=" " class="nav">DETAILS </a> </div>
-      <div class="Reviews "><a href=" " class="nav">REVIEWS</a></div>
-      <div class="Plans"><a href=" " class="nav">PLANS</a> </div>
-      <div class="signup-nav"><a href=" " class="nav">SIGN UP</a></div>
+  <header>
+    <nav class="nav-links row">
+        <ul class="navbar">
+          <li class="features"> <a href=" " class="nav">FEATURES </a> </li>
+          <li class="details"> <a href=" " class="nav">DETAILS </a> </li>
+          <li class="Reviews "><a href=" " class="nav">REVIEWS</a></li>
+          <li class="Plans"><a href=" "     class="nav">PLANS</a> </li>
+          <li class="signup-nav"><a href=" " class="nav">SIGN UP</a></li>
+        </ul>
     </nav>
-
-
+  
+  
     <div class="message">
       <h1 class="meal-message">MEAL PLANS</h1>
-
-      <h1 class="meal-message"> FOR <span class="last-part">EVERYONE</span></h1>
+      <h1 class="meal-message">FOR <span class="last-part">EVERYONE</span></h1>
       <button class="book">Book Now </button>
       <button class="show-more">Show me more </button>
     </div>
-  </section>
+  </header>
 
   <section id="features">
-    <div class="topdiv">
-      AWESOME FEATURES
+    <div class="topdiv row">
+      <h2>AWESOME FEATURES</h2>
     </div>
 
-    <div class="cards">
-      <div class="days"><i class="far fa-calendar-check icon"></i>
-        <h2 class="feature-heading">365 DAYS/YEAR</h2>
+    <div class="cards row">
+      <div class="days col span-1-of-3 box"><i class="far fa-calendar-check icon"></i>
+        <h3 class="feature-heading">365 DAYS/YEAR</h2>
         <p>
           Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can
           also choose to order more flexibly if that's your style.</p>
       </div>
-      <div class="organic"><i class="fas fa-seedling icon"></i>
-        <h2 class="feature-heading">100% ORGANIC</h2>
+      <div class="organic col span-1-of-3 box"><i class="fas fa-seedling icon"></i>
+        <h3 class="feature-heading">100% ORGANIC</h2>
         <p>
           All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics.
           Good for your health, the environment, and it also tastes better!</p>
       </div>
 
 
-      <div class="delivery">
+      <div class="delivery col span-1-of-3 box">
         <i class="fas fa-truck icon"></i>
-        <h2 class="feature-heading">30 MINUTES OR FREE</h2>
+        <h3 class="feature-heading">30 MINUTES OR FREE</h2>
         <p>
           You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We
           work with the best chefs in each town to ensure that you're 100% happy.</p>
@@ -64,31 +68,26 @@
   </section>
   <section id="steps">
 
-    <div class="heading-div">STEPS TO FOLLOW</div>
-
-    <div class="content-div">
-
-      <img class="step-img" src="images/Capture.Png" alt="step-image">
-
-
-      <div class="three-step">
-
+    <div class="row topdiv" ><h2>STEPS TO FOLLOW</h2></div>
+    <div class="content-div row">    
+      <div class="img-div col span-1-of-2" >
+        <img class="step-img" src="images/Capture.Png" alt="step-image">
+      </div>  
+      <div class="three-step col span-1-of-2">
         <div class="first">
           <div class="first-step">
             1
           </div>
           <p class="step-text">Choose the subscription plan that best fits your needs and sign up today.</p>
         </div>
-        <div class="second">
-          <div class="second-step">
+        <div class="first">
+          <div class="first-step">
             2
           </div>
           <p class="step-text">Order your delicious meal using our mobile app or website. Or you can even call us !</p>
-
         </div>
-
-        <div class="third">
-          <div class="third-step">
+        <div class="first">
+          <div class="first-step">
             3
           </div>
           <p class="step-text">Enjoy your meal after less than 20 minutes. See you the next time!</p>
@@ -105,28 +104,28 @@
   </section>
 
   <section id="review-section">
-    <div class="topdiv-review">
-      REVIEWS
+    <div class="topdiv-review row">
+      <h2>REVIEWS</h2>
     </div>
 
-    <div class="cards-review">
-      <div class="review-card">
-        <h2 class="review-head">DAVID SMITH</h2>
+    <div class="cards row">
+      <div class="card col span-1-of-3">
+        <h3 class="review-head">DAVID SMITH</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
           ipsam, magnam eius repellat perferendis porro, iste voluptas!.</p>
         <p class="star">⭐⭐⭐⭐⭐</p>
       </div>
-      <div class="review-card">
-        <h2 class="review-head">DAVID SMITH</h2>
+      <div class="  card col span-1-of-3">
+        <h3 class="review-head">DAVID SMITH</h2>
         <p>
 
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
           ipsam, magnam eius repellat perferendis porro, iste voluptas!.</p>
         <p class="star">⭐⭐⭐⭐⭐</p>
       </div>
-      <div class="review-card">
-        <h2 class="review-head">DAVID SMITH</h2>
+      <div class="card col span-1-of-3">
+        <h3 class="review-head">DAVID SMITH</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure odio, quod nisi facilis commodi ut sunt
           ipsam, magnam eius repellat perferendis porro, iste voluptas!.</p>
@@ -136,9 +135,9 @@
     </div>
   </section>
   <section id="signup">
-    <h2 class="topdiv-signup">START EATING HEALTHY TODAY</h2>
-    <div class="signup-parent">
-      <div class="signup-child">
+    <div class="topdiv-signup row"> <h2>START EATING HEALTHY TODAY</h2></div>
+    <div class="signup-parent row">
+      <div class="signup-child col span-1-of-3">
         <div class="signup-header">
           <h3>PREMIUM</h3>
           <div class="signup-pricing">
@@ -156,12 +155,12 @@
 
 
           <div class="signup-button">
-            <a href="#" class="btn btn-full">I'm hungry</a>
+            <a href="#" class="book">I'm hungry</a>
           </div>
         </div>
 
       </div>
-      <div class="signup-child active">
+      <div class="signup-child active col span-1-of-3" >
         <div class="signup-header">
           <h3>PREMIUM</h3>
           <div class="signup-pricing">
@@ -177,12 +176,15 @@
             <p><i class="fas fa-check small-icon"> </i>Free delivery</p>
           </div>
           <div class="signup-button">
-            <a href="#" class="btn btn-full">I'm hungry</a>
+            <a href="#" class="book">I'm hungry</a>
           </div>
         </div>
 
+      
       </div>
-      <div class="signup-child">
+    
+
+      <div class="signup-child col span-1-of-3">
         <div class="signup-header">
           <h3>PREMIUM</h3>
           <div class="signup-pricing">
@@ -198,7 +200,7 @@
             <p><i class="fas fa-check small-icon"> </i>Free delivery</p>
           </div>
           <div class="signup-button">
-            <a href="#" class="btn btn-full">I'm hungry</a>
+            <a href="#" class="book">I'm hungry</a>
           </div>
         </div>
       </div>
@@ -207,19 +209,19 @@
 
 
   <section id="contact-us">
-    <div class="topdiv-contact">
-      CONTACT US
+    <div class="topdiv row">
+      <h2>CONTACT US</h2>
     </div>
 
-    <div class="contact">
-      <div class="contact-video">
+    <div class="contact row">
+      <div class="contact-video col">
         <video class="bg-video__content" autoplay="" muted="" loop="">
           <source src="images/Avocado.mp4" type="video/mp4">
           Your browser is not supported
         </video>
       </div>
 
-      <div class="contact-form">
+      <div class="contact-form col">
         <div class="name">
           <p>Name</p>
           <input class="text" type="text" placeholder="Your Name">
@@ -278,6 +280,6 @@
     <p class="footer-p">Copyright © 2019 EVERYONE. All rights reserved.</p>
   </footer>
 </body>
-<script src="script.js"></script>
+<script src="./js/script.js"></script>
 
 </html>

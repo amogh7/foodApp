@@ -1,146 +1,193 @@
 *{
-  box-sizing:border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
-  color:white;
-  padding: 0;
-  margin :0;
-  background-image: #556052;
-  background-color: rgb(128, 96, 101);
-  background-size: cover;
-  background-position: center;
-  
-  
-  
+    color:white;
+    padding: 0;
+    margin :0;
+    background-image: #556052;
+    background-color: rgb(128, 96, 101);
+    background-size: cover;
+    background-position: center;
+    
+    
+    
 }
+
 .boxlogin{
-  width: 100%;
-  max-width: 440px;
-  text-align: center;
-  margin:30px auto 5px;
-  padding: 23px ; 
-  background: rgba(0,0,0,0.5); 
-  min-height: 463px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    margin:30px auto 5px;
+    padding: 23px ; 
+    background: rgba(0,0,0,0.5); 
+    min-height: 463px;
+    margin-bottom: 43px;
+   
 }
 
 .input1{
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-  width:80%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width:80%;
 }
-
+ 
 h1{
-  margin-bottom: 45px;
+    margin-bottom: 45px;
 }
 .signin{
-  width:90%;
-  margin :61px auto 35px;
-  display:block;
-  border:none;
-  padding: 10px 54px;
+  width: 90%;
+  margin: 25px auto 15px;
+  display: block;
+  border: none;
+  padding: 10px 48px;
   background-color: crimson;
   border-radius: 5px;
   cursor: pointer;
-  outline: none;
-     
+  outline: none ;
 }
 .signin:hover{
-  background-color: rgb(119, 104, 155);
+    background-color: rgb(119, 104, 155);
 }
 a{  color:white;
-  text-decoration: none;
-  font-size: medium;
+    text-decoration: none;
+    font-size: medium;
 }
 .forgot{
- 
-  
-  margin-left:50px;
+   
+    
+    margin-left:50px;
 }
 .forgot:hover{
-color:   rgb(119, 104, 155);
+ color:   rgb(119, 104, 155);
 }
 .SignIn:hover{
-  color:   rgb(119, 104, 155);
+    color:   rgb(119, 104, 155);
 }
 .SignIn{
-  margin: 30px;
+    margin: 30px;
 }
 
 
 .email-login{
-  text-align:center !important;
-  margin: 20px;
+    text-align:center !important;
+    margin: 20px;
 }
 .navbar{
-  
-  display: flex;
-  justify-content: flex-end;
-  color: white;
-  padding: 20px;
+    
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    padding: 20px;
 }
 .nav{
- font-size: 1rem;
- margin:20px 10px 10px;
- color:white;
- text-decoration: none;
- height: 25px;
- 
+   font-size: 1rem;
+   margin:20px 10px 10px;
+   color:white;
+   text-decoration: none;
+   height: 25px;
+   
 
 }
 .nav:hover{
-  
-  
-  border-bottom: 1px solid #5f27cd;
-  padding: 5px;
+    
+    
+    border-bottom: 1px solid #5f27cd;
+    padding: 5px;
 
 }
 .footer-text{
-  display :flex;
-
- 
+    display :flex;
+  
+   
 }
 .footer-parent{
-
-display: flex;
-justify-content: space-between;
-padding: 25px;
-font-size: 1.7rem;
-
+  
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+ font-size: 1.7rem;
+ 
 }
 ul {
-list-style-type: none;
+  list-style-type: none;
 }
 .social-link{
-display:flex;
+  display:flex;
 }
 .text-value{
-margin: 0px 15px;
+  margin: 0px 15px;
 }
 a{
-text-decoration: none;
-
+  text-decoration: none;
+  
 }
 footer{
-background-color: #3A3838;
+  background-color: #3A3838;
 }
 .footer-p{
-text-align:center;
-font-size: 1.5rem;
-padding-bottom: 50px;
+  text-align:center;
+  font-size: 1.5rem;
+  padding-bottom: 50px;
 }
 .icon-footer{
 margin: 0 20px;
 color:white;
 }
 .text-value a{
-color:white;
+  color:white;
 }
 
+.profile-photo{
+  height: 100px;
+  border-radius: 100%;
+  width: 100px;
+}
+#message{
+  margin: 20px;
+  color: red;
+}
+#profileImage{
+  display: none;
+  
+}
+.upload-label{
+  padding: 11px 10px;
+  background-color: crimson;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  width: 170px;
+  text-align: center;
+  margin: 25px;
+}
+.profile-div{
+  width: 40%;
+  display: flex;
+  margin: auto;
+  height: 498px;
+  padding: 15px;
+  background: rgba(0,0,0,0.5)
+  ;
+  justify-content: center;
+}
+
+.profile-details{
+  margin: 5px;
+  
+}
+
+
+footer{
+
+
+}

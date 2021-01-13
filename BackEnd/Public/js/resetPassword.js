@@ -1,3 +1,4 @@
+
 let resetPassword=document.querySelector("#pass-reset");
 let resetConfirmPassword=document.querySelector("#conpass-reset");
 let resetButton=document.querySelector(".reset-button");
@@ -12,6 +13,7 @@ resetButton.addEventListener("click",async function(e){
         let obj=await axios.patch(`http://localhost:3000/api/users/resetpassword/${token}`,{password:resetPassword.value,confirmPassword:resetConfirmPassword.value});
         console.log(obj);
        }
+     
        
     }  
     catch(error){

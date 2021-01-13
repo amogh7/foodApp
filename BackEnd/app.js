@@ -27,7 +27,10 @@ const cookieParser=require("cookie-parser");
 // it tracks incoming request and see if there is data in the request => the data will be fed in req.body
 
 app.use(express.json());
+
 app.use(cookieParser());
+
+
 app.use(express.static("public"));
 // app.use(function(req,res,next){
 //     console.log("I am called after express.json");

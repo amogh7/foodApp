@@ -37,6 +37,10 @@ let userSchema=mongoose.Schema({
         enum:["admin","user","restaurant owner","delhi"],
         default:"user"
     },
+    pImage:{
+        type:String,
+        default:"/images/users/default.png"
+    },
     pwToken:String,
     tokenTime:String
 });
