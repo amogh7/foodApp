@@ -7,6 +7,7 @@ const PlanRouter = require("./Router/planRouter");
 const userRouter = require("./Router/userRouter");
 
 const viewRouter=require("./Router/viewRouter");
+const bookingRouter=require("./Router/bookingRouter");
 
 const path=require("path");
 
@@ -44,6 +45,7 @@ app.set("views",path.join(__dirname,"view"));
 app.use("/api/plans",PlanRouter); 
 app.use("/api/users",userRouter);
 app.use("/",viewRouter);
+app.use("/api/plans/booking",bookingRouter);
 
 //################################################################users############################################################################ 
 //get all users
