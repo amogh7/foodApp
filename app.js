@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.use(express.static("public"));
+app.use(express.static(__dirname+"/public"));
 // app.use(function(req,res,next){
 //     console.log("I am called after express.json");
 // });
@@ -40,7 +40,7 @@ app.use(express.static("public"));
 //app.httpmethod(appRoute,cb function(req,res));
 
 app.set("view engine","pug");
-app.set("views","view");
+app.set("views",path.join(_dirname,"view"));
 
 app.use("/api/plans",PlanRouter); 
 app.use("/api/users",userRouter);
