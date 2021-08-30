@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.use(express.static(__dirname+"/public"));
+app.use(express.static("public"));
 // app.use(function(req,res,next){
 //     console.log("I am called after express.json");
 // });
