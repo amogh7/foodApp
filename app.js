@@ -40,7 +40,7 @@ app.use(express.static("public"));
 //app.httpmethod(appRoute,cb function(req,res));
 
 app.set("view engine","pug");
-app.set("views",path.join(__dirname,"view"));
+app.set("views","view");
 
 app.use("/api/plans",PlanRouter); 
 app.use("/api/users",userRouter);
