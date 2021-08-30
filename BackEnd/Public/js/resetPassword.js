@@ -10,7 +10,7 @@ resetButton.addEventListener("click",async function(e){
        token=token[token.length-1];
        if(resetPassword.value && resetConfirmPassword.value){
            
-        let obj=await axios.patch(`http://localhost:3000/api/users/resetpassword/${token}`,{password:resetPassword.value,confirmPassword:resetConfirmPassword.value});
+        let obj=await axios.patch(`http://food-thekaaa.herokuapp.com/api/users/resetpassword/${token}`,{password:resetPassword.value,confirmPassword:resetConfirmPassword.value});
         console.log(obj);
        }
      

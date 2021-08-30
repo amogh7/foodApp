@@ -39,13 +39,13 @@ async function createPaymentSession(req,res){
             })
     }
 }
-async function createnewBooking(req,res){
-    //booking collection-> if(user.bookedplanid){
-// push in bookedplans
-    // }
-    // else
-    // new booking document
-    // id
-}
+// async function createnewBooking(req,res){
+//     //booking collection-> if(user.bookedplanid){
+// // push in bookedplans
+//     // }
+//     // else
+//     // new booking document
+//     // id
+// }
 
 module.exports.createPaymentSession=createPaymentSession;
