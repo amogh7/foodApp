@@ -12,6 +12,9 @@ resetButton.addEventListener("click",async function(e){
            
         let obj=await axios.patch(`https://food-thekaaa.herokuapp.com/api/users/resetpassword/${token}`,{password:resetPassword.value,confirmPassword:resetConfirmPassword.value});
         console.log(obj);
+        if(obj.data.message){
+            message.innerHTML="successfully changed";
+        }
        }
      
        
