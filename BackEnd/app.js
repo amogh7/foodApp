@@ -79,7 +79,7 @@ app.use("/api/plans/booking",bookingRouter);
 // app.delete("/api/plans/:id",deletePlanById);
 // //update plan by id 
 // app.patch("/api/plans/:id",updatePlanByid);
-let port =process.env.PORT||3000;
+let port =process.env.PORT || 3000;
 app.listen(port,function(){
     console.log("server started at port 3000" );
 });
