@@ -11,7 +11,7 @@ forgetPassword.addEventListener("click" , async function(e){
     try{
         e.preventDefault();
         if(email.value){
-            let obj = await axios.post("http://food-thekaaa.herokuapp.com/api/users/forgetpassword" , {email:email.value});
+            let obj = await axios.post("https://food-thekaaa.herokuapp.com/api/users/forgetpassword" , {email:email.value});
             console.log(obj);
             if(obj.data.message){
                 
