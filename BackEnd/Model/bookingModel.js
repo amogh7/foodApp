@@ -5,6 +5,8 @@ const DB_LINK=process.env.DB_LINK;
 mongoose.connect(DB_LINK,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(function(db){
     console.log("db created");
+}).catch(function(err){
+console.log("not connected to db");
 });
 const bookedPlanSchema=new mongoose.Schema({
     planId:{
