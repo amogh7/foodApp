@@ -18,13 +18,13 @@ signupBtn.addEventListener("click", async function (e) {
                 password: pw.value,
                 confirmPassword: cpw.value
             }
-            let obj = await axios.post("http://food-thekaaa.herokuapp.com/api/users/signup", signupObj);
+            let obj = await axios.post("https://food-thekaaa.herokuapp.com/api/users/signup", signupObj);
             console.log(obj);
             if (obj.data.data) {
                 console.log("bye")
                 message.innerHTML = obj.data.message;
                 await setTimeoutPromise(3000);
-                let obj2 = await axios.post("http://food-thekaaa.herokuapp.com/api/users/login", { email: email.value, password: pw.value });
+                let obj2 = await axios.post("https://food-thekaaa.herokuapp.com/api/users/login", { email: email.value, password: pw.value });
                 console.log(obj2);
                 if (obj2.data.data) {
                     window.location.href = "/";
