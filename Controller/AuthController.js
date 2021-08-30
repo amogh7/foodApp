@@ -194,7 +194,7 @@ async function isAuthorized(req , res , next){
             console.log(token);
             let updatedUser=await user.save({validateBeforeSave:false});
                 console.log(updatedUser);
-                let resetLink=`http://localhost:3000/resetpassword/${token}`;
+                let resetLink=`https://food-thekaaa.herokuapp.com/resetpassword/${token}`;
                 let message = {
                     from:GMAIL_ID,
                     to:user.email,
