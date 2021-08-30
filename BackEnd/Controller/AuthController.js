@@ -1,10 +1,13 @@
 let userModel=require("../Model/usersModel");
 const jwt=require("jsonwebtoken");
-const { SECRET_KEY , GMAIL_ID , GMAIL_PW } = require("../config/secrets");
+// const { SECRET_KEY , GMAIL_ID , GMAIL_PW } = require("../config/secrets");
 const cookieParser=require("cookie-parser");
 const nodemailer = require("nodemailer");
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+const SECRET_KEY=process.env.SECRET_KEY;
+const GMAIL_ID=process.env.GMAIL_ID;
+const GMAIL_PW=process.env.GMAIL_PW;
 
 async function sendEmail(message) {
   try {

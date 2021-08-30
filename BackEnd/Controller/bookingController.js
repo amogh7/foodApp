@@ -1,5 +1,6 @@
 const planModel = require("../Model/plansModel");
 const userModel = require("../Model/usersModel");
+const bookingModel=require("../Model/bookingModel")
 const stripe = require('stripe')('sk_test_51JTXZaSA7ZYmi6JqjB0EQAdNHzOAlqlEhN83xSASlgKdmn9qsT230fAXCEmAKghK5A2SQ8aYp8vA8AwZrf9a70Kq00kLQVwEIz');
 async function createPaymentSession(req,res){
     try{
@@ -38,4 +39,13 @@ async function createPaymentSession(req,res){
             })
     }
 }
+async function createnewBooking(req,res){
+    //booking collection-> if(user.bookedplanid){
+// push in bookedplans
+    // }
+    // else
+    // new booking document
+    // id
+}
+
 module.exports.createPaymentSession=createPaymentSession;

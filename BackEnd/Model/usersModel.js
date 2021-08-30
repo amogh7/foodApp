@@ -1,6 +1,7 @@
 let crypto=require("crypto");
 let mongoose=require("mongoose");
-const { DB_LINK } = require("../config/secrets");
+// const { DB_LINK } = require("../config/secrets");
+const DB_LINK=process.env.DB_LINK;
 mongoose.connect(DB_LINK,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(function(db){
     console.log("db created");
@@ -42,7 +43,11 @@ let userSchema=mongoose.Schema({
         default:"/images/users/default.png"
     },
     pwToken:String,
-    tokenTime:String
+    tokenTime:String,
+    bookedPlanId:{
+        type:String,
+
+    }
 });
 //hook-- it will run before function Create. just an example
 userSchema.pre("save",function(){
