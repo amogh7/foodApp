@@ -1,6 +1,6 @@
 let mongoose=require("mongoose");
-// let {DB_LINK} =require("../config/secrets");
-const DB_LINK=process.env.DB_LINK;
+let {DB_LINK} =require("../config/secrets");
+// const DB_LINK=process.env.DB_LINK;
 
 mongoose.connect(DB_LINK,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(function(db){

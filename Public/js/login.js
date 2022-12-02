@@ -11,7 +11,7 @@ forgetPassword.addEventListener("click" , async function(e){
     try{
         e.preventDefault();
         if(email.value){
-            let obj = await axios.post("https://food-thekaaa.herokuapp.com/api/users/forgetpassword" , {email:email.value});
+            let obj = await axios.post("https://food-thekaa.onrender.com/api/users/forgetpassword" , {email:email.value});
             console.log(obj);
             if(obj.data.message){
                 
@@ -32,7 +32,7 @@ loginBtn.addEventListener("click",async function(e){
     try{
         e.preventDefault();
         if(email.value && pw.value){
-            let obj = await axios.post("https://food-thekaaa.herokuapp.com/api/users/login",{email:email.value,password:pw.value});
+            let obj = await axios.post("https://food-thekaa.onrender.com/api/users/login",{email:email.value,password:pw.value});
             console.log(obj);
             if(obj.data.data){
                 window.location.href="/";

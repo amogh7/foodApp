@@ -12,7 +12,7 @@ buyPlansButtons[i].addEventListener("click",async function(e){
         try{
                let planId=buyPlansButtons[i].getAttribute("planid");
                console.log(planId);
-               let session=await axios.post("https://food-thekaaa.herokuapp.com/api/plans/booking/createpaymentsession",{planId:planId});
+               let session=await axios.post("https://food-thekaa.onrender.com/api/plans/booking/createpaymentsession",{planId:planId});
                let sessId=session.data.session.id;
                let result=await stripe.redirectToCheckout({sessionId:sessId});
                console.log(result);

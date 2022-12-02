@@ -1,12 +1,12 @@
 let mongoose=require("mongoose");
-// let {DB_LINK} =require("../config/secrets");
-const DB_LINK=process.env.DB_LINK;
+let {DB_LINK} =require("../config/secrets");
+// const DB_LINK=process.env.DB_LINK;
 
 mongoose.connect(DB_LINK,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(function(db){
     console.log("db created");
 }).catch(function(err){
-    console.log("not connected to db");
+    console.log(err);
     });
 let planSchema=mongoose.Schema({
     name:{
