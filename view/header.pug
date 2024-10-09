@@ -1,16 +1,12 @@
 nav.nav-links.row
   ul.navbar
     li.features
-      a.nav(href='/') FEATURES 
-    li.details
-      a.nav(href=' ') DETAILS 
-    li.Reviews
-      a.nav(href=' ') REVIEWS
+      a.nav(href='/') Home
     li.Plans
       a.nav(href='/plans') PLANS
     if name
        li.name
-         a.pro-name(href='/profile' ) #{name}
+         a.pro-name(href='/profile' ) #{name} Profile
        li.logout
          a.nav(href='/logout' ) LOGOUT
     else     
