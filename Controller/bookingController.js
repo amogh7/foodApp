@@ -4,12 +4,14 @@ const bookingModel = require("../Model/bookingModel");
 const stripe = require("stripe")(
   "sk_test_51JTXZaSA7ZYmi6JqjB0EQAdNHzOAlqlEhN83xSASlgKdmn9qsT230fAXCEmAKghK5A2SQ8aYp8vA8AwZrf9a70Kq00kLQVwEIz"
 );
+
 async function createPaymentSession(req, res) {
   try {
     const userId = req.id;
     const { planId } = req.body;
+    console.log(planId, "plan");
     const plan = await planModel.findById(planId);
-    console.log(plan);
+    console.log(plan, "plan");
     const user = await userModel.findById(userId);
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -27,8 +29,8 @@ async function createPaymentSession(req, res) {
         },
       ],
       mode: "payment",
-      success_url: "https://food-thekaaa-caf41b057aaf.herokuapp.com/",
-      cancel_url: "https://food-thekaaa-caf41b057aaf.herokuapp.com/",
+      success_url: "http://localhost:3000",
+      cancel_url: "http://localhost:3000",
     });
     res.json({
       session,

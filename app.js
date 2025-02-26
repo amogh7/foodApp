@@ -1,4 +1,5 @@
-const express=require("express");
+const express = require("express");
+
 const PlanRouter = require("./Router/planRouter");
 // let plans =require("./db/plans.json");
 // const fs=require("fs");
@@ -6,17 +7,20 @@ const PlanRouter = require("./Router/planRouter");
 
 const userRouter = require("./Router/userRouter");
 
-const viewRouter=require("./Router/viewRouter");
-const bookingRouter=require("./Router/bookingRouter");
+const viewRouter = require("./Router/viewRouter");
+const bookingRouter = require("./Router/bookingRouter");
 
-const path=require("path");
+const path = require("path");
 
-
-const app=express();
-const cookieParser=require("cookie-parser");
-
-
-
+const app = express();
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 //middlewares
 //user defined middlewares
@@ -31,7 +35,6 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-
 app.use(express.static("Public"));
 // app.use(function(req,res,next){
 //     console.log("I am called after express.json");
@@ -39,21 +42,23 @@ app.use(express.static("Public"));
 
 //app.httpmethod(appRoute,cb function(req,res));
 
-app.set("view engine","pug");
-app.set("views",path.join(__dirname,"view"));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "view"));
 
-app.use("/api/plans",PlanRouter); 
-app.use("/api/users",userRouter);
-app.use("/",viewRouter);
-app.use("/api/plans/booking",bookingRouter);
-
-//################################################################users############################################################################ 
+app.use("/api/plans", PlanRouter);
+app.use("/api/users", userRouter);
+// app.use("/", viewRouter);
+app.use("/api/plans/booking", bookingRouter);
+app.use(express.static(path.join(__dirname, "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+//################################################################users############################################################################
 //get all users
 
 // app.get("/api/users",getAllUsers);
 
-
-// //create a user 
+// //create a user
 // app.post("/api/users",createUser);
 // //delete user by id
 
@@ -61,7 +66,6 @@ app.use("/api/plans/booking",bookingRouter);
 // //update user by id
 
 // app.patch("/api/users/:id",UpdateUserByid);
-
 
 // //
 
@@ -77,10 +81,9 @@ app.use("/api/plans/booking",bookingRouter);
 //   app.get("/api/plans/:id",getPlanById);
 // //delete plan by id
 // app.delete("/api/plans/:id",deletePlanById);
-// //update plan by id 
+// //update plan by id
 // app.patch("/api/plans/:id",updatePlanByid);
-let port =process.env.PORT || 3000;
-app.listen(port,function(){
-    console.log("server started at port 3000" );
+let port = process.env.PORT || 8080;
+app.listen(port, function () {
+  console.log("server started at port 8080", process.env.PORT);
 });
-

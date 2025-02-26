@@ -81,3 +81,5 @@ userSchema.methods.resetPasswordHandler = function (password, confirmPassword) {
 let userModel = mongoose.model("usersCollection", userSchema);
 
 module.exports = userModel;
+
+console.log("");

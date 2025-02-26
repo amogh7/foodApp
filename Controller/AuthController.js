@@ -3,9 +3,10 @@ const jwt = require("jsonwebtoken");
 // const { SECRET_KEY , GMAIL_ID , GMAIL_PW } = require("../config/secrets");
 const cookieParser = require("cookie-parser");
 const nodemailer = require("nodemailer");
+const { response } = require("express");
 
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-const SECRET_KEY = process.env.SECRET_KEY;
+const SECRET_KEY = process.env.SECRET_KEY || "Amogh";
 const GMAIL_ID = process.env.GMAIL_ID;
 const GMAIL_PW = process.env.GMAIL_PW;
 
@@ -42,7 +43,7 @@ async function signup(req, res) {
       confirmPassword: user.confirmPassword,
       role: user.role,
     });
-    console.log(newUser);
+    console.log(newUser, "signed in");
     res.status(201).json({
       message: "Successfully Signed up ",
       data: newUser,
@@ -56,14 +57,13 @@ async function signup(req, res) {
 }
 
 async function logout(req, res) {
-  try {
-    res.clearCookie("jwt");
-    res.redirect("/");
-  } catch (error) {
-    res.status(501).json({
-      error,
-    });
-  }
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    secure: true, // Use true in production (requires HTTPS)
+    sameSite: "strict",
+    expires: new Date(0), // Expire immediately
+  });
+  res.status(200).json({ message: "Logged out" });
 }
 
 async function isLoggedIn(req, res, next) {
@@ -82,23 +82,52 @@ async function isLoggedIn(req, res, next) {
     next();
   }
 }
+async function getLoggedInUser(req, res, next) {
+  try {
+    let token = req.cookies.jwt;
+    console.log(req.cookies, "user");
+    const payload = jwt.verify(token, SECRET_KEY);
+    if (payload) {
+      let user = await userModel.findById(payload.id);
+      req.name = user.name;
+      req.user = user;
+      res.status(200).json({
+        message: "user is logged in",
+        data: user,
+        //    token,
+      });
+    } else {
+      res.status(401).json({
+        message: "Please log in",
+        //    token,
+      });
+    }
+  } catch (error) {
+    next();
+  }
+}
 
 async function login(req, res) {
   try {
     let { email, password } = req.body;
     console.log(email, password);
-    let loggedInUser = await userModel.find({ email: email });
-    if (loggedInUser.length) {
-      let user = loggedInUser[0];
+    let loggedInUser = await userModel.findOne({ email: email });
+    console.log(loggedInUser, "login");
+    if (loggedInUser) {
+      let user = loggedInUser;
       if (user.password == password) {
         const token = jwt.sign({ id: user["_id"] }, SECRET_KEY);
-        res.cookie("jwt", token, { httpOnly: true });
-
-        res.status(200).json({
-          message: "loged in Successfuly",
-          data: loggedInUser[0],
-          //    token,
-        });
+        res
+          .status(202)
+          .cookie("jwt", token, {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000,
+          })
+          .json({
+            message: "loged in Successfuly",
+            data: loggedInUser,
+            //    token,
+          });
       } else {
         res.status(200).json({
           message: "Email and password did not match",
@@ -226,6 +255,41 @@ async function resetPassword(req, res) {
     });
   }
 }
+
+async function sendEmailToUs(req, res) {
+  try {
+    const { email, message } = req.body;
+    console.log(email);
+
+    let user = await userModel.findOne({ email: email });
+    console.log(user);
+
+    if (user) {
+      let emailMessage = {
+        from: user.email,
+        to: GMAIL_ID,
+        subject: "Contact US",
+        text: "user wants " + message,
+      };
+      console.log(user, message);
+      let response = await sendEmail(emailMessage);
+
+      res.status(201).json({
+        message: "sent successfuly",
+        response,
+      });
+    } else {
+      res.statu(404).json({
+        message: response,
+      });
+    }
+  } catch (error) {
+    res.status(501).json({
+      message: "Failed to send",
+      error,
+    });
+  }
+}
 module.exports.isAuthorized = isAuthorized;
 module.exports.signup = signup;
 module.exports.login = login;
@@ -234,3 +298,5 @@ module.exports.forgetPassword = forgetPassword;
 module.exports.resetPassword = resetPassword;
 module.exports.isLoggedIn = isLoggedIn;
 module.exports.logout = logout;
+module.exports.getLoggedInUser = getLoggedInUser;
+module.exports.sendEmailToUs = sendEmailToUs;
