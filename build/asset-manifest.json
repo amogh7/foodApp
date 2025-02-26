@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.62e5c768.css",
-    "main.js": "/static/js/main.79855250.js",
+    "main.js": "/static/js/main.d40c8667.js",
     "static/media/hero2.jpg": "/static/media/hero2.f6e87b084273ecb75eff.jpg",
     "static/media/avocado.mp4": "/static/media/avocado.a47677c6af58b26244df.mp4",
     "static/media/pexels-chan-walrus-958545.jpg": "/static/media/pexels-chan-walrus-958545.dcb2433e83dbbf4bcce6.jpg",
     "index.html": "/index.html",
     "main.62e5c768.css.map": "/static/css/main.62e5c768.css.map",
-    "main.79855250.js.map": "/static/js/main.79855250.js.map"
+    "main.d40c8667.js.map": "/static/js/main.d40c8667.js.map"
   },
   "entrypoints": [
     "static/css/main.62e5c768.css",
-    "static/js/main.79855250.js"
+    "static/js/main.d40c8667.js"
   ]
 }
